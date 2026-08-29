@@ -1,0 +1,19 @@
+================================================================================================
+S2  SHARPER DOMAIN LEMMA      target = 0.8344
+================================================================================================
+  d* with f(d*) = target      : 0.693830648713   (f(d*) = 0.834400000000)
+  old lemma (centre distance) : |t| <= 0.7   [f(0.7) = 0.836548794]
+
+  Reuleaux-3:  R = 0.577350269190  (corner radii spread 2.22e-16)   ->  |t| <= 0.192366411526
+              exclusion sound on 200,000 samples: 0 failures, min a priori area 0.834400265249 >= 0.8344
+  Reuleaux-5:  R = 0.525731112119  (corner radii spread 1.11e-16)   ->  |t| <= 0.195890714644
+              exclusion sound on 200,000 samples: 0 failures, min a priori area 0.834400622399 >= 0.8344
+
+  translation-box 4-volume   old 3.841600   new 0.02271989   reduction 169.1x
+  linear shrink per body     R3 3.64x    R5 3.57x
+
+  target sensitivity (domain grows with the target, as it must):
+    target 0.834400000000  ->  R3 |t| <= 0.192366412   R5 |t| <= 0.195890715
+    target 0.834600000000  ->  R3 |t| <= 0.193197816   R5 |t| <= 0.196534739
+    target 0.834800000000  ->  R3 |t| <= 0.194027736   R5 |t| <= 0.197178056
+    target 0.834780952792  ->  R3 |t| <= 0.193948761   R5 |t| <= 0.197116820

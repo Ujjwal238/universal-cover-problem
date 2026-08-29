@@ -1,0 +1,11 @@
+name: lebesgue
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12.13
+  - numpy=2.5.1
+  - scipy=1.18.0
+  - mpmath=1.4.1
+  - matplotlib=3.11.1   # figures only, not on the proof path
+  - shapely=2.1.2    # audits only, not on the proof path

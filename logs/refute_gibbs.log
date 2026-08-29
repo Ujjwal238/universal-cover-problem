@@ -1,0 +1,19 @@
+Gibbs 2014 reports 0.83699098 for this family (simulated annealing).
+Searching for ANY placement with smaller hull area...
+
+  trial   0: new best 0.838580440   above Gibbs
+  trial  13: new best 0.838164299   above Gibbs
+  trial  27: new best 0.838103990   above Gibbs
+  trial  32: new best 0.837773529   above Gibbs
+  trial  34: new best 0.837632347   above Gibbs
+  trial  55: new best 0.837611752   above Gibbs
+
+Differential evolution polish...
+  DE best 0.837295810
+
+==============================================================================
+  Gibbs 2014 (annealing) : 0.836990980
+  best found here        : 0.837295810
+  => NOT refuted: no smaller placement found (+3.048e-04).
+     Corroborates his estimate, but is still not a proof.
+==============================================================================

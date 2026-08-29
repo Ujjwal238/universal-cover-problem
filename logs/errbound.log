@@ -1,0 +1,30 @@
+====================================================================================================
+S1  RIGOROUS FLOATING-POINT ERROR BOUND FOR THE LEAF BOUND
+====================================================================================================
+
+-- Part A: a priori bound --
+  u = 2^-53                                  1.110223e-16
+  membership tolerance tau                   1.000e-12
+  eps = tau + 4u(rho+tau) + 8uR              1.001578604153e-12
+  rigorous perimeter bound P                 8.025828
+  (E1) eps*P + pi*eps^2                      8.038498e-12
+  (E2) structural: N <= m+2K = 3072, S <= N R^2 = 5012.3
+       gamma_N * S                           1.709514e-09
+
+  eta = (E1) + (E2)                          1.717552e-09
+  worst leaf slack reported by the verifier   1.240900e-05
+  ratio slack/eta                            7,225x
+  => certified bound 0.8344 survives subtracting eta: YES
+
+-- Part B: 60-digit recomputation, m=1024 K=1024, 6 hardest boxes --
+  halfwidth                double                60-digit          diff  pts dbl/mp
+   1.00e-03     0.833231467436143       0.833231467436141     1.665e-15  1023/1023 1025/1025
+   2.51e-04     0.834385295544316       0.834385295544310     6.661e-15  1023/1023 1025/1025
+   6.31e-05     0.834679091659945       0.834679091659946     1.554e-15  1023/1023 1025/1025
+   1.58e-05     0.834753098646473       0.834753098646468     5.440e-15  1023/1023 1025/1025
+   3.98e-06     0.834771688598264       0.834771688598261     3.109e-15  1023/1023 1025/1025
+   1.00e-06     0.834776411898170       0.834776411898168     1.665e-15  1023/1023 1025/1025
+
+  worst double-vs-60-digit discrepancy       6.661e-15
+  a priori eta                               1.718e-09
+  consistent: measured error below eta

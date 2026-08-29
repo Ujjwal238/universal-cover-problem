@@ -1,0 +1,38 @@
+====================================================================================================
+EMIT CERTIFICATE  family A,  target a >= 0.833
+  verifier witness resolution m = 1024  ->  rigorous deficit <= 8.001e-06
+  search threshold = target + deficit + 1e-9 = 0.833008001541
+  262,144 seed subtrees (depth 18), hmin 1e-05
+====================================================================================================
+     20,000/262,144 seeds           54,864 nodes   [   0.1 min,    16,653 nodes/s]
+     40,000/262,144 seeds          247,556 nodes   [   0.6 min,     7,284 nodes/s]
+     60,000/262,144 seeds        6,214,302 nodes   [   7.6 min,    13,668 nodes/s]
+     80,000/262,144 seeds       24,923,052 nodes   [  30.1 min,    13,818 nodes/s]
+    100,000/262,144 seeds       40,863,662 nodes   [  49.2 min,    13,845 nodes/s]
+    120,000/262,144 seeds       59,741,462 nodes   [  95.9 min,    10,378 nodes/s]
+    140,000/262,144 seeds      192,415,456 nodes   [ 182.7 min,    17,553 nodes/s]
+    160,000/262,144 seeds      291,007,552 nodes   [ 187.6 min,    25,854 nodes/s]
+    180,000/262,144 seeds      352,887,748 nodes   [ 195.7 min,    30,050 nodes/s]
+    200,000/262,144 seeds      418,310,432 nodes   [ 220.2 min,    31,662 nodes/s]
+    220,000/262,144 seeds      459,987,160 nodes   [ 248.0 min,    30,916 nodes/s]
+    240,000/262,144 seeds      551,984,182 nodes   [ 318.1 min,    28,922 nodes/s]
+    260,000/262,144 seeds      564,234,610 nodes   [ 329.3 min,    28,556 nodes/s]
+    262,144/262,144 seeds      947,693,104 nodes   [ 568.6 min,    27,777 nodes/s]
+
+  nodes emitted : 947,693,104   (0 stuck)
+  certificate   : cert_A_0833.bin  119.7 MB  (1.01 bits/node)
+  wall clock    : 568.6 min
+
+====================================================================================================
+VERIFYING  a >= 0.833   (8 processes, hull = Qhull + sampled monotone-chain cross-check)
+  witness m=1024 (sagitta 2.353e-06), |t| <= 0.7, 262,144 seeds
+  emitter searched at 0.833008001541; this check uses 0.833
+====================================================================================================
+
+  nodes replayed 947,693,104   leaves checked 473,977,624   [458.3 min, 17,236 leaves/s]
+  cross-check: 94,586 leaves recomputed with the hand-written monotone chain, worst disagreement 1.810e-14
+  worst leaf slack above target: 3.960090e-06
+
+====================================================================================================
+  VERIFIED:  a >= 0.833
+====================================================================================================

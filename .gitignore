@@ -1,0 +1,22 @@
+# python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+paper/*.vtc
+
+# uncompressed certificates: the .bin.gz files are what is tracked.
+# the small control certificates are kept, since they are the test fixtures.
+*.bin
+!certificates/controls/*.bin

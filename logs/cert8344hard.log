@@ -1,0 +1,30 @@
+==============================================================================================================
+HARDENED CERTIFY  a >= 0.8344   family = disk + Reuleaux3 + Reuleaux5
+  strict prune: bound >= target + 1e-09   (floating-point headroom)
+  children inflated by 1e-11 -> union provably covers the parent
+  coverage accounting on; |t| <= 0.7 a priori (f = 0.836548794)
+==============================================================================================================
+  round   1:     256 tasks ->       1,921,176 boxes,     364 requeued,    0 stuck, tightest prune +2.71e-09   [   1.6 min,   20,104 box/s]
+  round   2:     364 tasks ->      12,867,145 boxes,   1,079 requeued,    0 stuck, tightest prune +1.20e-09   [  10.6 min,   20,281 box/s]
+  round   3:   1,079 tasks ->      38,970,371 boxes,   1,609 requeued,    0 stuck, tightest prune +1.00e-09   [  31.6 min,   20,583 box/s]
+  round   4:   1,609 tasks ->      75,791,430 boxes,   2,082 requeued,    0 stuck, tightest prune +1.00e-09   [  65.4 min,   19,303 box/s]
+  round   5:   2,082 tasks ->     123,078,130 boxes,   2,486 requeued,    0 stuck, tightest prune +1.00e-09   [ 103.2 min,   19,883 box/s]
+  round   6:   2,486 tasks ->     177,523,166 boxes,   2,758 requeued,    0 stuck, tightest prune +1.00e-09   [ 145.6 min,   20,326 box/s]
+  round   7:   2,758 tasks ->     237,352,830 boxes,   2,926 requeued,    0 stuck, tightest prune +1.00e-09   [ 192.4 min,   20,565 box/s]
+  round   8:   2,926 tasks ->     294,639,270 boxes,   2,576 requeued,    0 stuck, tightest prune +1.00e-09   [ 237.2 min,   20,704 box/s]
+  round   9:   2,576 tasks ->     343,092,981 boxes,   2,305 requeued,    0 stuck, tightest prune +1.00e-09   [ 277.2 min,   20,631 box/s]
+  round  10:   2,305 tasks ->     384,514,583 boxes,   1,767 requeued,    0 stuck, tightest prune +1.00e-09   [ 311.2 min,   20,596 box/s]
+  round  11:   1,767 tasks ->     414,147,674 boxes,   1,244 requeued,    0 stuck, tightest prune +1.00e-09   [ 334.3 min,   20,647 box/s]
+  round  12:   1,244 tasks ->     433,694,453 boxes,     749 requeued,    0 stuck, tightest prune +1.00e-09   [ 350.5 min,   20,622 box/s]
+  round  13:     749 tasks ->     444,766,482 boxes,     376 requeued,    0 stuck, tightest prune +1.00e-09   [ 359.7 min,   20,607 box/s]
+  round  14:     376 tasks ->     449,270,404 boxes,     128 requeued,    0 stuck, tightest prune +1.00e-09   [ 363.3 min,   20,611 box/s]
+  round  15:     128 tasks ->     450,526,840 boxes,      40 requeued,    0 stuck, tightest prune +1.00e-09   [ 364.5 min,   20,602 box/s]
+  round  16:      40 tasks ->     450,922,384 boxes,       0 requeued,    0 stuck, tightest prune +1.00e-09   [ 364.9 min,   20,593 box/s]
+
+==============================================================================================================
+  CERTIFIED:  a >= 0.8344
+  450,922,384 boxes, 16 rounds, 364.9 min
+  tightest pruning decision cleared the target by 1.000e-09 (FP error ~1e-13)
+  every box pruned with >= 1e-09 slack; children provably cover parents;
+  all 16 rounds fully accounted for
+==============================================================================================================

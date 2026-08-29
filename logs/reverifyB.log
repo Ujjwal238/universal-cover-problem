@@ -1,0 +1,16 @@
+====================================================================================================
+VERIFYING  a >= 0.8344   family B = disk + Reuleaux3 + Reuleaux5
+  witness: 1024-gon for the disk, 1024 arc points per core
+  arc sagitta 4.706e-06  ->  deficit <= 3.777e-05
+  emitter searched at 0.834416002117; this check uses 0.8344
+  advisory: thresh - target = 1.600e-05 vs worst-case deficit 3.777e-05  (optimistic -- leaves decide)
+====================================================================================================
+
+  nodes replayed 486,799,600   leaves checked 245,496,952   [882.3 min, 4,637 leaves/s]
+  forest identity 2L - nseed = 486,799,600  vs nodes 486,799,600  OK
+  cross-check: 24,704 leaves recomputed with the hand-written hull, worst disagreement 6.046e-13
+  worst leaf slack above target: 1.240900e-05
+
+====================================================================================================
+  VERIFIED:  a >= 0.8344
+====================================================================================================

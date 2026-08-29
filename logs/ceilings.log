@@ -1,0 +1,26 @@
+================================================================================================
+S4  RIGOROUS CEILINGS FROM EXHIBITED PLACEMENTS
+================================================================================================
+
+-- disk + regular triangle + regular pentagon --
+  witness placement v = [ 0.004667984235 -0.008121781288  1.464915745106  0.012090029144
+ -0.020585645194]
+  exact-kernel area at v         0.833597536505
+         m    outer bound (rigorous)
+    10,000            0.833638743312
+   100,000            0.833601458986
+ 1,000,000            0.833597896796
+  => M(family) <= 0.833597897
+     0.833597897 < 0.8344, so NO lower bound of 0.8344 can be
+     obtained from this family by any search whatsoever.
+
+-- disk + Reuleaux triangle + Reuleaux pentagon --
+  witness placement v = [-1.215883209899e-02 -3.708198611978e-08  1.256661190387e+00
+  2.299660691706e-02 -3.896981517063e-06]
+  exact-kernel area at v         0.834780945912
+         m    outer bound (rigorous)
+    10,000            0.834784367852
+   100,000            0.834783043137
+ 1,000,000            0.834781190917
+  => M(family) <= 0.834781191
+     0.834781191 >= 0.8344: this family can support the target.

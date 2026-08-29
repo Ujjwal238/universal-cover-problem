@@ -1,0 +1,24 @@
+====================================================================================================
+EMIT CERTIFICATE  family A,  target a >= 0.832
+  verifier witness resolution m = 1024  ->  rigorous deficit <= 8.001e-06
+  search threshold = target + deficit + 1e-9 = 0.832008001541
+  16,384 seed subtrees (depth 14), hmin 1e-05
+====================================================================================================
+
+  nodes emitted : 145,137,288   (0 stuck)
+  certificate   : cert_A_0832.bin  18.2 MB  (1.00 bits/node)
+  wall clock    : 76.8 min
+
+====================================================================================================
+VERIFYING  a >= 0.832   (8 processes, hull = Qhull + sampled monotone-chain cross-check)
+  witness m=1024 (sagitta 2.353e-06), |t| <= 0.7, 16,384 seeds
+  emitter searched at 0.832008001541; this check uses 0.832
+====================================================================================================
+
+  nodes replayed 145,137,288   leaves checked 72,576,836   [65.7 min, 18,415 leaves/s]
+  cross-check: 14,378 leaves recomputed with the hand-written monotone chain, worst disagreement 1.932e-14
+  worst leaf slack above target: 4.480885e-06
+
+====================================================================================================
+  VERIFIED:  a >= 0.832
+====================================================================================================

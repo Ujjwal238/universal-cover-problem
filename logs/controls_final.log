@@ -1,0 +1,58 @@
+====================================================================================================
+CERTIFICATE CONTROLS
+====================================================================================================
+
+-- POSITIVE control: /Users/admin1/test/universal-cover-problem/certificates/controls/certB_test.bin must be ACCEPTED by /Users/admin1/test/universal-cover-problem/src/verifyB.py --
+   [PASS] exit 0   ['  VERIFIED:  a >= 0.83']
+
+-- controls built from /Users/admin1/test/universal-cover-problem/certificates/controls/certB_test.bin --
+   [PASS] ctl_B_bitflip1.bin         must refuse  one tree bit flipped, 44751 bytes from the end
+          -> refused
+   [PASS] ctl_B_bitflip2.bin         must refuse  one tree bit flipped, 89502 bytes from the end
+          -> refused
+   [PASS] ctl_B_bitflip3.bin         must refuse  one tree bit flipped, 134254 bytes from the end
+          -> refused
+   [PASS] ctl_B_bitflip4.bin         must refuse  one tree bit flipped, 179005 bytes from the end
+          -> refused
+   [PASS] ctl_B_bitflip5.bin         must refuse  one tree bit flipped, 223756 bytes from the end
+          -> refused
+   [PASS] ctl_B_trunc.bin            must refuse  bit stream truncated by an eighth
+          -> refused
+   [PASS] ctl_B_target.bin           must refuse  header target raised 0.83 -> 0.84
+          -> refused
+   [PASS] ctl_B_tmax.bin             must refuse  claimed domain shrunk 0.7 -> 0.55, no longer excluding outside placements
+          -> refused
+   [PASS] ctl_B_inflate.bin          must refuse  child inflation made negative 1e-11 -> -1e-09, opening gaps between siblings
+          -> refused
+   [PASS] ctl_B_m_finer.bin          must accept  witness resolution refined 1024 -> 4096 (a tightening, not a corruption)
+          -> accepted
+
+-- POSITIVE control: /Users/admin1/test/universal-cover-problem/certificates/controls/cert_test.bin must be ACCEPTED by /Users/admin1/test/universal-cover-problem/src/verify.py --
+   [PASS] exit 0   ['  VERIFIED:  a >= 0.82']
+
+-- controls built from /Users/admin1/test/universal-cover-problem/certificates/controls/cert_test.bin --
+   [PASS] ctl_A_bitflip1.bin         must refuse  one tree bit flipped, 11574 bytes from the end
+          -> refused
+   [PASS] ctl_A_bitflip2.bin         must refuse  one tree bit flipped, 23148 bytes from the end
+          -> refused
+   [PASS] ctl_A_bitflip3.bin         must refuse  one tree bit flipped, 34722 bytes from the end
+          -> refused
+   [PASS] ctl_A_bitflip4.bin         must refuse  one tree bit flipped, 46296 bytes from the end
+          -> refused
+   [PASS] ctl_A_bitflip5.bin         must refuse  one tree bit flipped, 57870 bytes from the end
+          -> refused
+   [PASS] ctl_A_trunc.bin            must refuse  bit stream truncated by an eighth
+          -> refused
+   [PASS] ctl_A_target.bin           must refuse  header target raised 0.82 -> 0.83
+          -> refused
+   [PASS] ctl_A_tmax.bin             must refuse  claimed domain shrunk 0.7 -> 0.55, no longer excluding outside placements
+          -> refused
+   [PASS] ctl_A_inflate.bin          must refuse  child inflation made negative 1e-11 -> -1e-09, opening gaps between siblings
+          -> refused
+   [PASS] ctl_A_m_finer.bin          must accept  witness resolution refined 1024 -> 4096 (a tightening, not a corruption)
+          -> accepted
+
+====================================================================================================
+  22 passed, 0 failed
+  ALL CONTROLS BEHAVED CORRECTLY
+====================================================================================================

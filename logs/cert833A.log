@@ -1,0 +1,31 @@
+========================================================================================================
+INDEPENDENT VERIFICATION OF THE PUBLISHED RECORD:  certify a >= 0.833
+  family A = disk + equilateral triangle (side 1) + regular pentagon (diameter 1)
+  the Brass-Sharifi (2005) / Xie (2026) test sets, entirely different machinery
+  family optimum LB3 = 0.833597388099  ->  margin 0.000597
+  hardened: strict prune +1e-9, children provably cover parents, coverage accounting
+  already established this session: a >= 0.8320 (reproduces Brass-Sharifi 0.832)
+========================================================================================================
+  round   1:     256 tasks ->      1,922,700 boxes,     320 requeued,    0 stuck, tightest +3.27e-09   [   0.9 min,   37,355 box/s]
+  round   2:     320 tasks ->     11,765,943 boxes,     973 requeued,    0 stuck, tightest +1.10e-09   [   5.2 min,   37,998 box/s]
+  round   3:     973 tasks ->     38,136,714 boxes,   1,966 requeued,    0 stuck, tightest +1.09e-09   [  16.6 min,   38,403 box/s]
+  round   4:   1,966 tasks ->     92,794,454 boxes,   3,528 requeued,    0 stuck, tightest +1.04e-09   [  39.9 min,   38,740 box/s]
+  round   5:   3,528 tasks ->    178,509,724 boxes,   4,792 requeued,    0 stuck, tightest +1.00e-09   [  76.7 min,   38,778 box/s]
+  round   6:   4,792 tasks ->    285,272,500 boxes,   5,624 requeued,    0 stuck, tightest +1.00e-09   [ 122.4 min,   38,842 box/s]
+  round   7:   5,624 tasks ->    407,243,006 boxes,   6,234 requeued,    0 stuck, tightest +1.00e-09   [ 174.6 min,   38,878 box/s]
+  round   8:   6,234 tasks ->    533,514,592 boxes,   5,988 requeued,    0 stuck, tightest +1.00e-09   [ 230.3 min,   38,616 box/s]
+  round   9:   5,988 tasks ->    647,855,799 boxes,   5,203 requeued,    0 stuck, tightest +1.00e-09   [ 283.9 min,   38,034 box/s]
+  round  10:   5,203 tasks ->    742,122,730 boxes,   4,216 requeued,    0 stuck, tightest +1.00e-09   [ 325.2 min,   38,033 box/s]
+  round  11:   4,216 tasks ->    816,290,484 boxes,   3,116 requeued,    0 stuck, tightest +1.00e-09   [ 357.3 min,   38,080 box/s]
+  round  12:   3,116 tasks ->    870,656,216 boxes,   2,250 requeued,    0 stuck, tightest +1.00e-09   [ 380.1 min,   38,172 box/s]
+  round  13:   2,250 tasks ->    905,226,109 boxes,   1,193 requeued,    0 stuck, tightest +1.00e-09   [ 394.6 min,   38,231 box/s]
+  round  14:   1,193 tasks ->    920,542,213 boxes,     403 requeued,    0 stuck, tightest +1.00e-09   [ 401.2 min,   38,237 box/s]
+  round  15:     403 tasks ->    924,949,066 boxes,     108 requeued,    0 stuck, tightest +1.00e-09   [ 403.2 min,   38,238 box/s]
+  round  16:     108 tasks ->    926,053,132 boxes,       0 requeued,    0 stuck, tightest +1.00e-09   [ 403.8 min,   38,223 box/s]
+
+========================================================================================================
+  CERTIFIED:  a >= 0.833
+  926,053,132 boxes, 16 rounds, 403.8 min
+  tightest pruning decision cleared the target by 1.001e-09
+  => LB3 in [0.833, 0.833597388] ; Xie's 2026 record independently CONFIRMED
+========================================================================================================

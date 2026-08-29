@@ -1,0 +1,55 @@
+======================================================================================================================
+AUDIT of family A = disk + equilateral triangle (side 1) + regular pentagon (diameter 1)
+  the Brass-Sharifi / Xie test sets.  measured optimum LB3 = 0.833597388099
+  circumradii: triangle 0.577350269190, pentagon 0.525731112119
+  inradii:     triangle 0.288675134595, pentagon 0.425325404176  <- erosion empties here
+======================================================================================================================
+
+-- A. admissibility (diameter exactly 1) --
+[PASS] disk: diameter = max width = 1                                   max width 1.000000000000000
+[PASS] equilateral triangle side 1: diameter = max width = 1            max width 1.000000000000000
+[PASS] regular pentagon diameter 1: diameter = max width = 1            max width 1.000000000000000
+[PASS] triangle side length == 1                                        
+[PASS] triangle area == sqrt3/4                                         
+[PASS] pentagon area == (5/2)R^2 sin(72deg)                             
+
+-- B. gauge and symmetry reductions --
+[PASS] pentagon invariant under 2pi/5 (rho range valid)                 1.11e-16
+[PASS] triangle invariant under 2pi/3 (orientation gauge valid)         3.33e-16
+[PASS] triangle mirror image is a rotation of itself (reflections redundant) 5.55e-16
+[PASS] pentagon mirror image is a rotation of itself (reflections redundant) 1.67e-16
+
+-- C. a priori domain lemma --
+[PASS] f(0.5) matches hull(disk, point at distance 0.5)                 0.785398163397448
+[PASS] f(0.6) matches hull(disk, point at distance 0.6)                 0.804808017050931
+[PASS] f(0.7) matches hull(disk, point at distance 0.7)                 0.836548794348176
+[PASS] f(0.99) matches hull(disk, point at distance 0.99)               0.952288648470806
+[PASS] f monotone increasing on [0.5,2]                                 
+[PASS] f(0.7) > 0.833 (domain restriction valid)                        f=0.836548794
+[PASS] triangle contains its own centre                                 min support 0.288675135 = inradius
+[PASS] pentagon contains its own centre                                 min support 0.425325404 = inradius
+[PASS] triangle: max |p| == circumradius (delta formula uses R)         max|p|=0.577350269189626 R=0.577350269189626
+[PASS] pentagon: max |p| == circumradius (delta formula uses R)         max|p|=0.525731112119134 R=0.525731112119134
+
+-- D. erosion over the whole delta range, straddling emptiness --
+[PASS] erosion None iff delta >= inradius, and always inside the original 0 defects / 1200 (n,delta) pairs over delta in [0,0.999]
+[PASS] eroded vertices satisfy every inward-moved edge constraint       0 / 400
+
+-- E. core inside every placement in its box --
+[PASS] core is inside every placement (h up to 0.16, full rotation range) 0 violations / 8000 placements
+
+-- F. TWO-SIDED cross-check (independent: vertices + scipy hull) --
+[PASS] m=1024: no disagreement in either direction                      gap min +0.00e+00 median +1.94e-06 max +4.75e-06; neg 0, >1e-5 0
+[PASS] m=4096: no disagreement in either direction                      gap min +0.00e+00 median +1.21e-07 max +2.95e-07; neg 0, >1e-5 0
+
+-- G. box_bound <= true minimum (independent truth) --
+[PASS] box_bound never exceeds the independently computed minimum       0/300, worst 0.00e+00, min slack 3.387e-05
+[PASS] exact and independent single-placement areas agree               max diff 4.40e-08
+
+-- H. split covering --
+[PASS] children provably cover the parent (no gaps)                     worst uncovered 0.00e+00
+[PASS] every sampled point of the parent lies in some child             0 points missed / 48000
+
+======================================================================================================================
+  29/29 audit checks passed  --  CLEAR TO CERTIFY
+======================================================================================================================

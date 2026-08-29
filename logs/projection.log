@@ -1,0 +1,12 @@
+====================================================================================
+SECTION 6 PROJECTION
+====================================================================================
+  ceiling 0.834781191   certified 0.8344   headroom 3.812e-04
+  anchor: margin 3.811910e-04 -> 450,922,384 boxes
+  local exponent p = 1.94, throughput 19,648 box/s
+  target 0.8345: margin 2.8119e-04  ->  813,683,979 boxes  =  11.5 h
+  target 0.8346: margin 1.8119e-04  ->  1,908,681,510 boxes  =  27.0 h
+  target 0.8347: margin 8.1191e-05  ->  9,058,852,851 boxes  =  128.1 h
+
+  bits per node: 8 * 81.3e6 / 450922384 ... certificate size over node count
+    8 * 81.3e6 / 486799600 = 1.3361

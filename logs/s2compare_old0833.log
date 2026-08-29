@@ -1,0 +1,36 @@
+====================================================================================================
+S2 CONTROLLED COMPARISON: old centre-distance vs new farthest-corner domain
+  depth 18, hmin 1e-05, prune eps 1e-09, inflate 1e-11
+====================================================================================================
+
+target a >= 0.833
+  OLD f(d)     root |t| <= (0.700000, 0.700000)  262,144 seeds
+        46,497/262,144 seeds        105,547 boxes  [  1.2 min,     1,419 box/s]
+        62,321/262,144 seeds        513,511 boxes  [  2.9 min,     2,924 box/s]
+        77,149/262,144 seeds      1,349,177 boxes  [  4.2 min,     5,381 box/s]
+        77,661/262,144 seeds      1,778,159 boxes  [  5.6 min,     5,319 box/s]
+        92,989/262,144 seeds      1,946,687 boxes  [ 10.2 min,     3,187 box/s]
+       107,805/262,144 seeds      2,455,157 boxes  [ 14.2 min,     2,890 box/s]
+       108,317/262,144 seeds      2,655,117 boxes  [ 17.6 min,     2,508 box/s]
+       123,117/262,144 seeds      4,680,117 boxes  [ 19.6 min,     3,971 box/s]
+       123,645/262,144 seeds      5,159,745 boxes  [ 20.9 min,     4,108 box/s]
+       138,457/262,144 seeds      6,514,177 boxes  [ 22.4 min,     4,837 box/s]
+       140,789/262,144 seeds      7,883,421 boxes  [ 23.4 min,     5,604 box/s]
+       153,785/262,144 seeds      7,930,195 boxes  [ 25.5 min,     5,177 box/s]
+       165,381/262,144 seeds      9,384,761 boxes  [ 26.5 min,     5,896 box/s]
+       169,113/262,144 seeds      9,621,189 boxes  [ 27.7 min,     5,789 box/s]
+       184,953/262,144 seeds     12,184,495 boxes  [ 30.0 min,     6,777 box/s]
+       199,749/262,144 seeds     12,328,777 boxes  [ 31.8 min,     6,456 box/s]
+       200,261/262,144 seeds     12,989,245 boxes  [ 33.2 min,     6,523 box/s]
+       215,589/262,144 seeds     13,134,261 boxes  [ 36.9 min,     5,930 box/s]
+       230,405/262,144 seeds     15,040,675 boxes  [ 40.4 min,     6,206 box/s]
+       230,933/262,144 seeds     16,296,587 boxes  [ 41.5 min,     6,549 box/s]
+       245,733/262,144 seeds     16,726,311 boxes  [ 43.8 min,     6,370 box/s]
+       246,245/262,144 seeds     16,775,889 boxes  [141.6 min,     1,974 box/s]
+       262,121/262,144 seeds     17,452,889 boxes  [148.2 min,     1,963 box/s]
+       262,133/262,144 seeds     20,459,953 boxes  [151.5 min,     2,251 box/s]
+       262,137/262,144 seeds     22,268,735 boxes  [153.8 min,     2,414 box/s]
+       262,141/262,144 seeds     25,425,355 boxes  [156.4 min,     2,709 box/s]
+      -> 25,425,568 boxes, 0 stuck, 156.44 min
+  NEW f(g(d))  root |t| <= (0.186504, 0.191362)  262,144 seeds
+        11,845/262,144 seeds         65,139 boxes  [ 53.1 min,        20 box/s]

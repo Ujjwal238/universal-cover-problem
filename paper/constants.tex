@@ -1,0 +1,122 @@
+% ---------------------------------------------------------------------------
+% Every constant in the paper lives here once, annotated with the log or the
+% paper it was read from.  Prose, statements, captions and tables use the macro;
+% no numeric literal appears anywhere else.  The abstract is the sole exception,
+% since the class processes it for metadata and it must not contain macros.
+%
+% Our own values are read from the repository logs at the time of writing.
+% Other people's values are read from their papers, never from a survey table.
+% ---------------------------------------------------------------------------
+
+% ---- the result ------------------------------------------------------------
+\newcommand{\MainBound}{0.8344}                    % logs/reverifyB.log, VERIFIED line
+\newcommand{\ClassicalCeiling}{0.833597897}        % logs/ceilings.log, outer bound m=10^6
+\newcommand{\CeilingDirs}{1{,}000{,}000}           % logs/ceilings.log, half-planes used
+\newcommand{\HeadroomToCeiling}{\ensuremath{3.8\times10^{-4}}} % ceiling minus main bound
+
+% ---- published bounds, each read from the source paper ---------------------
+\newcommand{\PalLB}{\ensuremath{\pi/8+\sqrt3/4}}   % Pal 1920
+\newcommand{\ElekesLB}{0.8271}                     % Elekes 1994, DCG 12:439-449
+\newcommand{\BSLB}{0.832}                          % Brass and Sharifi 2005, IJCGA 15(5)
+\newcommand{\XieLB}{0.833}                         % Xie 2026, arXiv:2606.04458 (preprint)
+\newcommand{\GibbsUpper}{0.8440935944}             % Gibbs 2018, arXiv:1810.10089
+\newcommand{\GibbsHeuristic}{0.83699098}           % Gibbs 2014, arXiv:1401.8217, sec. 2
+\newcommand{\GibbsOursOnHis}{0.837296}             % logs/refute_gibbs.log, best of 60 restarts
+
+% ---- the certificate -------------------------------------------------------
+\newcommand{\Nodes}{486{,}799{,}600}               % logs/reverifyB.log
+\newcommand{\Leaves}{245{,}496{,}952}              % logs/reverifyB.log
+\newcommand{\HardBoxes}{450{,}922{,}384}           % logs/cert8344hard.log, hardened run
+\newcommand{\HardMinutes}{364.9}                   % logs/cert8344hard.log
+\newcommand{\EmitMinutes}{591.1}                   % logs/phase4_B.log, the emitting run
+\newcommand{\TreeMB}{60.85}                        % 486799600 bits, the tree itself
+\newcommand{\BlockIndexMB}{16.78}                  % 4 bytes x 2^22 block sizes
+
+\newcommand{\CertMB}{81.3}                         % cert_B_08344.bin on disk
+\newcommand{\BitsPerNode}{1.34}                    % derived: 8*81.3e6/Nodes, see logs/projection.log
+\newcommand{\WorstSlack}{\ensuremath{1.2409\times10^{-5}}}   % logs/reverifyB.log
+\newcommand{\CrossCheckLeaves}{24{,}704}           % logs/reverifyB.log
+\newcommand{\CrossCheckWorst}{\ensuremath{6.05\times10^{-13}}} % logs/reverifyB.log
+
+% ---- floating point --------------------------------------------------------
+\newcommand{\Unit}{\ensuremath{2^{-53}}}           % IEEE-754 double unit roundoff
+\newcommand{\Tau}{\ensuremath{10^{-12}}}           % membership tolerance, src/verifyB.py
+\newcommand{\EpsMem}{\ensuremath{1.0016\times10^{-12}}}  % logs/errbound.log
+\newcommand{\PerimBound}{8.026}                    % logs/errbound.log
+\newcommand{\ErrMembership}{\ensuremath{8.04\times10^{-12}}}  % logs/errbound.log, (E1)
+\newcommand{\VertexBound}{3072}                    % m + 2K, structural
+\newcommand{\ShoelaceS}{5012}                      % N R^2, structural
+\newcommand{\ErrShoelace}{\ensuremath{1.71\times10^{-9}}}     % logs/errbound.log, (E2)
+\newcommand{\Eta}{\ensuremath{1.72\times10^{-9}}}             % logs/errbound.log
+\newcommand{\SlackOverEta}{\ensuremath{7.2\times10^{3}}}      % logs/errbound.log
+\newcommand{\HighPrecDiff}{\ensuremath{6.66\times10^{-15}}}   % logs/errbound.log, part B
+\newcommand{\HighPrecDigits}{60}                   % logs/errbound.log
+
+% ---- the domain ------------------------------------------------------------
+\newcommand{\TmaxThree}{0.192366}                  % logs/domain.log
+\newcommand{\TmaxFive}{0.195891}                   % logs/domain.log
+\newcommand{\DomainShrink}{169}                    % logs/domain.log, 4-volume ratio
+\newcommand{\TmaxNaive}{0.70}                      % used by the certificate on record
+\newcommand{\CircThree}{0.577350269190}            % 1/sqrt3
+\newcommand{\CircFive}{0.525731112119}             % Reuleaux pentagon circumradius
+
+% ---- validation ------------------------------------------------------------
+\newcommand{\AuditChecks}{29}                      % logs/auditA_final.log, auditB_final.log
+\newcommand{\KernelGates}{28}                      % src/test_geom.py
+\newcommand{\ControlsPassed}{22}                   % logs/controls_final.log
+\newcommand{\PalAgreement}{\ensuremath{1.1\times10^{-16}}}    % kernel vs closed form
+\newcommand{\BSFigAgreement}{\ensuremath{3.2\times10^{-6}}}   % vs Brass-Sharifi Fig. 2
+
+% ---- cost scaling ----------------------------------------------------------
+\newcommand{\BoxesCheapTarget}{25{,}425{,}568}     % logs/s2compare_old0833.log, target 0.833
+\newcommand{\BoxesSharpDomain}{27{,}350{,}260}     % logs/s2new.log, same target, sharp domain
+
+% ---- witness placements for the ceilings (logs/ceilings.log) ----------------
+% (t3x, t3y, rho, t5x, t5y); body 3 unrotated by the gauge, body 5 rotated by rho
+\newcommand{\ClassicalTthree}{(0.004667984,-0.008121781)}   % logs/ceilings.log; bound re-checked at these rounded values in logs/ceilings_paper.log
+\newcommand{\ClassicalRho}{1.464915745}                     % logs/ceilings.log; bound re-checked at these rounded values in logs/ceilings_paper.log
+\newcommand{\ClassicalTfive}{(0.012090029,-0.020585645)}    % logs/ceilings.log; bound re-checked at these rounded values in logs/ceilings_paper.log
+\newcommand{\ReuleauxWitness}{(-0.012158832,\,-0.000000037,\,1.256661190,\,0.022996607,\,-0.000003897)}   % logs/ceilings.log; bound re-checked at these rounded values in logs/ceilings_paper.log
+\newcommand{\ClassicalCeilingSafe}{0.8336}         % rounded up from logs/ceilings.log
+\newcommand{\FamilyBCeilingSafe}{0.83479}          % rounded up from logs/ceilings.log
+% Evaluated at the coordinates PRINTED in the paper, not at the optimiser's full
+% precision output, so that a reader who types the stated arrangement reproduces
+% the stated bound.  Source: logs/ceilings_paper.log, "as printed" rows.
+% These are UPPER bounds, so every digit is rounded UP.
+\newcommand{\ClassicalOuterA}{0.833638744}         % computed 0.833638743381, N=10^4
+\newcommand{\ClassicalOuterB}{0.833601460}         % computed 0.833601459007, N=10^5
+\newcommand{\ClassicalOuterC}{0.833597897}         % computed 0.833597896826, N=10^6
+\newcommand{\ReuleauxOuterC}{0.834781191}          % computed 0.834781190813, N=10^6
+
+% ---- the domain actually used by the certificate on record -----------------
+\newcommand{\fAtTmax}{0.836548794}                 % logs/domain.log, f(0.70); rounded DOWN
+                                                   % (used as a lower bound, must not overstate)
+\newcommand{\InradThree}{0.422649730810}           % 1 - 1/sqrt3, erosion emptiness threshold
+\newcommand{\InradFive}{0.474268887881}            % 1 - R_5
+
+% ---- search and certificate parameters (header of cert_B_08344.bin) --------
+\newcommand{\Inflate}{\ensuremath{10^{-11}}}       % child widening factor
+\newcommand{\WitnessM}{1024}                       % inscribed polygon for the disc
+\newcommand{\WitnessK}{1024}                       % boundary points per eroded core
+\newcommand{\SeedDepth}{22}                        % subtrees emitted independently
+\newcommand{\NSeed}{4{,}194{,}304}                 % = 2^22
+\newcommand{\Hmin}{\ensuremath{10^{-5}}}           % refinement guard
+
+% ---- cost scaling (logs/scaling.log; 8 points in 5-D, 6 in 8-D) ------------
+\newcommand{\FiveDExpGlobal}{2.66}                 % global fit over the whole range
+\newcommand{\FiveDExpTight}{1.94}                  % between the two tightest margins
+\newcommand{\EightDExpGlobal}{5.50}                % global fit, 8-D family
+\newcommand{\HalfDimFive}{2.5}                     % d/2 heuristic, d=5
+\newcommand{\HalfDimEight}{4.0}                    % d/2 heuristic, d=8
+\newcommand{\EightDOptimum}{0.836494901}           % logs/scaling.log, NUMERICAL optimum
+\newcommand{\EightDBoxes}{\ensuremath{8.6\times10^{11}}}  % logs/scaling.log, 8-D projection
+\newcommand{\EightDDays}{880}                      % at the measured 8-D throughput
+\newcommand{\NextTargetBoxes}{\ensuremath{1.9\times10^{9}}}   % logs/projection.log
+\newcommand{\NextTargetHours}{27}                  % logs/projection.log
+
+\newcommand{\NextTarget}{0.8346}                  % target discussed in section 6
+\newcommand{\CheapTarget}{0.833}                  % target of the domain comparison
+
+\newcommand{\ThroughputFive}{19{,}648}             % logs/scaling.log, median box/s 5-D
+\newcommand{\ThroughputEight}{11{,}351}            % logs/scaling.log, median box/s 8-D
+\newcommand{\FiveDOptimum}{0.834780947}            % logs/scaling.log, NUMERICAL optimum

@@ -1,0 +1,50 @@
+================================================================================================================
+AUDIT: a >= 0.8344   (family = disk + Reuleaux3 + Reuleaux5, dim 5)
+================================================================================================================
+
+-- A. the three test sets are admissible (diameter exactly 1) --
+[PASS] disk diameter 1: diameter = max width                          width in [1.000000000000000,1.000000000000000]
+[PASS] Reuleaux3 width 1: diameter = max width                        width in [1.000000000000000,1.000000000000000]
+[PASS] Reuleaux5 width 1: diameter = max width                        width in [1.000000000000000,1.000000000000000]
+[PASS] Reuleaux3 area == (pi-sqrt3)/2                                 
+[PASS] Reuleaux5 area == (pi-5tan(pi/10))/2                           
+[PASS] disk: support area == contact-hull area                        diff 8.97e-09
+[PASS] Reuleaux3: support area == contact-hull area                   diff 1.79e-08
+[PASS] Reuleaux5: support area == contact-hull area                   diff 1.79e-08
+
+-- B. gauge and symmetry reductions --
+[PASS] Reuleaux5 invariant under rotation by 2pi/5 (rho range valid)  max |h - h_rot| = 1.67e-16
+[PASS] Reuleaux3 invariant under rotation by 2pi/3                    max diff 3.33e-16
+[PASS] Reuleaux3 mirror image is a rotation of itself                 best match 3.33e-16
+[PASS] Reuleaux5 mirror image is a rotation of itself                 best match 1.11e-16
+
+-- C. the a priori domain lemma --
+[PASS] f(0.5) matches hull(disk, point at distance 0.5)               0.785398163397448
+[PASS] f(0.6) matches hull(disk, point at distance 0.6)               0.804808017050931
+[PASS] f(0.7) matches hull(disk, point at distance 0.7)               0.836548794348176
+[PASS] f(0.8) matches hull(disk, point at distance 0.8)               0.873731864852902
+[PASS] f(0.99) matches hull(disk, point at distance 0.99)             0.952288648470806
+[PASS] f is monotone increasing on [0.5, 2]                           
+[PASS] f(0.7) > target                                                f=0.836548794 > 0.8344
+[PASS] Reuleaux3 contains its own centre                              min support = 0.422650 (= inradius)
+[PASS] Reuleaux5 contains its own centre                              min support = 0.474269 (= inradius)
+[PASS] root box side == TMAX and rho span == 2pi/5                    (structure checked in D)
+
+-- D. CIRC is the true maximum radius from the rotation centre --
+[PASS] Reuleaux3: max |p| == CIRC (corners are farthest)              max|p|=0.577350269189626 CIRC=0.577350269189626
+[PASS] Reuleaux5: max |p| == CIRC (corners are farthest)              max|p|=0.525731112119134 CIRC=0.525731112119134
+
+-- E. erosion soundness at the scales the certificate reaches --
+[PASS] eroded body inside every D(V_j,w-d), delta up to 0.99          0 violations / 400 shapes
+[PASS] eroded bodies: support area == contact-hull area               0 inconsistent / 300, worst diff 1.79e-08
+[PASS] core is inside every placement in its box (h in 1e-5..1e-3)    0 violations / 3600 placements
+
+-- F. box_bound <= true minimum, at the certificate's tight scales --
+[PASS] box_bound never exceeds the sampled minimum (tight boxes)      0 violations / 500 boxes, worst overshoot 0.00e+00
+
+-- G. split tiling, including the 1-ulp question --
+[PASS] split: children cover the parent to within 1 ulp               worst gap/mismatch 2.22e-16 (overlap 2.22e-16) -- gaps are covered by continuity, not exactness
+
+================================================================================================================
+  29/29 audit checks passed
+================================================================================================================

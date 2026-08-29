@@ -1,0 +1,29 @@
+====================================================================================================
+S2, sharp scheme only.  Baseline (old scheme, same settings): 25,425,568 boxes
+====================================================================================================
+  NEW f(g(d))  root |t| <= (0.186504, 0.191362)  262,144 seeds
+        16,089/262,144 seeds        478,413 boxes  [  1.3 min,     5,923 box/s]
+        24,017/262,144 seeds      1,929,113 boxes  [  2.9 min,    10,931 box/s]
+        39,745/262,144 seeds      3,623,497 boxes  [  3.9 min,    15,320 box/s]
+        67,329/262,144 seeds      5,087,591 boxes  [  4.9 min,    17,157 box/s]
+        71,457/262,144 seeds      5,568,943 boxes  [  6.0 min,    15,446 box/s]
+        79,381/262,144 seeds      6,950,737 boxes  [  7.2 min,    16,056 box/s]
+        87,437/262,144 seeds      8,644,073 boxes  [  8.2 min,    17,535 box/s]
+        95,237/262,144 seeds     10,247,567 boxes  [  9.2 min,    18,504 box/s]
+       114,945/262,144 seeds     11,773,281 boxes  [ 10.2 min,    19,170 box/s]
+       155,085/262,144 seeds     13,895,737 boxes  [ 11.2 min,    20,595 box/s]
+       174,777/262,144 seeds     14,725,569 boxes  [ 12.8 min,    19,145 box/s]
+       178,869/262,144 seeds     15,452,119 boxes  [ 13.9 min,    18,585 box/s]
+       190,629/262,144 seeds     17,242,613 boxes  [ 14.9 min,    19,297 box/s]
+       202,657/262,144 seeds     18,323,021 boxes  [ 16.0 min,    19,064 box/s]
+       226,437/262,144 seeds     19,664,943 boxes  [ 17.0 min,    19,243 box/s]
+       238,069/262,144 seeds     21,024,171 boxes  [ 18.1 min,    19,367 box/s]
+       246,129/262,144 seeds     22,022,003 boxes  [ 19.2 min,    19,104 box/s]
+       250,225/262,144 seeds     23,525,077 boxes  [ 20.5 min,    19,149 box/s]
+       262,125/262,144 seeds     25,844,375 boxes  [ 21.6 min,    19,926 box/s]
+       262,137/262,144 seeds     26,819,831 boxes  [ 22.8 min,    19,564 box/s]
+      -> 27,350,260 boxes, 0 stuck, 23.21 min
+
+  old  25,425,568 boxes
+  new  27,350,260 boxes   (0 stuck)
+  ratio 0.93x fewer boxes with the farthest-corner domain

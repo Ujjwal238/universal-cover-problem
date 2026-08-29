@@ -1,0 +1,22 @@
+============================================================================================
+FAMILY-B CERTIFIED-COST SCALING, re-fitted from measured runs
+============================================================================================
+  ceiling 0.834780952792
+   target       margin            boxes  source
+   0.8344   3.8095e-04      450,922,384  cert8344hard.log
+   0.8330   1.7810e-03       25,425,568  s2compare_old0833.log
+
+  fit  boxes = C * margin^-p   with  p = 1.8645,  C = 1.901138e+02
+  (the 2.66 used earlier over-predicts cost here; the exponent flattens at tight margins)
+
+  check: predicted at 0.8330 = 25,425,568 vs measured 25,425,568
+
+   target       margin    predicted boxes   at 20k box/s
+  0.83450   2.8095e-04        795,543,490          11.0 h
+  0.83460   1.8095e-04      1,806,829,516          25.1 h
+  0.83465   1.3095e-04      3,302,115,155          45.9 h
+  0.83470   8.0953e-05      8,095,840,098         112.4 h
+
+  two measured points only, so these are extrapolations; the exponent is
+  flattening with tighter margins, so a fit from these two points OVER-predicts
+  cost at tighter targets, making the estimates conservative.
