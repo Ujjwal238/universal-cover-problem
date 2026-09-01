@@ -8,7 +8,7 @@
 
 Indian Institute of Information Technology Una
 
-[arXiv](LINK)
+[arXiv](https://arxiv.org/abs/2608.30538)
 
 </div>
 
@@ -222,22 +222,28 @@ Supporting measurements, not on the proof path: `scaling.py`, `s2compare.py`,
 ## Citation
 
 ```bibtex
-@misc{mishra2026lebesgue,
-  title  = {A Certified Lower Bound for Lebesgue's Universal Covering Problem},
-  author = {Mishra, Ujjwal},
-  year   = {2026},
-  eprint = {arXiv:TBD}
+@misc{mishra2026curvesconstantwidthlebesgues,
+      title={Curves of constant width and Lebesgue's covering problem}, 
+      author={Ujjwal Mishra},
+      year={2026},
+      eprint={2608.30538},
+      archivePrefix={arXiv},
+      primaryClass={cs.CG},
+      url={https://arxiv.org/abs/2608.30538}, 
 }
 ```
 
 Please also cite the paper that had the idea:
 
 ```bibtex
-@misc{gibbs2014slant,
-  title  = {A New Slant on Lebesgue's Universal Covering Problem},
-  author = {Gibbs, Philip},
-  year   = {2014},
-  eprint = {arXiv:1401.8217}
+@misc{gibbs2014newslantlebesguesuniversal,
+      title={A New Slant on Lebesgue's Universal Covering Problem}, 
+      author={Philip Gibbs},
+      year={2014},
+      eprint={1401.8217},
+      archivePrefix={arXiv},
+      primaryClass={math.MG},
+      url={https://arxiv.org/abs/1401.8217}, 
 }
 ```
 
