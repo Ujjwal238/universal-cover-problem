@@ -68,11 +68,11 @@ therefore bounds the cover's area from below.
 | certified lower bound | 0.8344 | `logs/reverifyB.log` |
 | ceiling of the disk + regular triangle + regular pentagon family | at most 0.8336 | `logs/ceilings.log` |
 | ceiling of the disk + Reuleaux triangle + Reuleaux pentagon family | at most 0.834781191 | `logs/ceilings.log` |
-| search | 450,922,384 boxes, 364.9 min | `logs/cert8344hard.log` |
-| certificate | 486,799,600 nodes, 245,496,952 leaves | `logs/reverifyB.log` |
+| certificate, from the emitting run | 486,799,600 nodes, 245,496,952 leaves, 591.1 min | `logs/phase4_B.log` |
+| corroborating run, prunes at target + 1e-9, writes no certificate | 450,922,384 boxes, 364.9 min | `logs/cert8344hard.log` |
 | worst leaf slack above target | 1.240900e-05 | `logs/reverifyB.log` |
-| rigorous floating point error bound | 9.287e-12 | `logs/errbound.log` |
-| measured double vs 60 digit error | 2.998e-15 | `logs/errbound.log` |
+| rigorous floating point error bound | 1.72e-9 | `logs/errbound.log` |
+| measured double vs 60 digit error | 6.66e-15 | `logs/errbound.log` |
 
 The first ceiling is what makes the result structural rather than a harder
 search. Exhibiting one arrangement of the disk, equilateral triangle and regular
@@ -87,25 +87,30 @@ contains the hull, so it errs upward by construction.
 Three ingredients.
 
 **The erosion core lemma.** A Reuleaux polygon of width `w` is the intersection
-of discs of radius `w` about its corners. If every corner moves by at most `δ`,
-the intersection of the discs of radius `w − δ` about the *original* corners lies
+of discs of radius `w` about its corners. If every corner moves by at most `delta`,
+the intersection of the discs of radius `w - delta` about the *original* corners lies
 inside *every* placement, by the triangle inequality. One hull computation
 therefore bounds an entire box of placements from below. This is what makes
 rigorous branch and bound possible for bodies with curved boundaries.
 
 **A priori domain bound.** The corners of a body of diameter one already sit at
-distance 0.53 to 0.58 from its own centre. Applying the area estimate to the
+distance 0.52 to 0.58 from its own centre. Applying the area estimate to the
 farthest corner rather than the centre confines the translations to
-`|t| ≤ 0.1924` and `|t| ≤ 0.1959`, a 169 fold reduction in 4-volume against the
-naive `|t| ≤ 0.70` (`src/domain.py`). This reproduces, independently, the
-`[−0.19, 0.19]⁴` box stated by Brass and Sharifi.
+`|t| <= 0.1924` and `|t| <= 0.1959`, a 169 fold reduction in 4-volume against the
+naive `|t| <= 0.70` (`src/domain.py`). This reproduces, independently, the
+`[-0.19, 0.19]^4` box stated by Brass and Sharifi.
 
 **Certificate.** The branch and bound tree is stored as one bit per node in DFS
 pre-order: 1 for a split, 0 for a pruned leaf. Boxes are never stored. The
 verifier regenerates every box from the root using the deterministic split rule,
-so 486,799,600 nodes cost 486,799,600 bits. At each leaf it recomputes the bound
-by elementary means only, inscribed polygons, the triangle inequality and the
-shoelace formula, and checks it against the target.
+so the encoding costs one bit per node: 486,799,600 bits, or 60.85 MB. The file
+adds an index of the 4,194,304 block lengths and pads each block to a byte
+boundary, giving 81.3 MB on disk and 1.34 bits per node. At each leaf the verifier
+recomputes the bound from inscribed polygons, the triangle inequality and the
+shoelace formula, and checks it against the target. The convex hull itself is
+computed by a library routine on the production path and by a hand-written
+monotone chain on a sample of leaves; dropping a vertex only shrinks the hull, so
+the choice cannot make the bound unsound.
 
 ## Reproducing
 
@@ -159,7 +164,7 @@ Independently of that, the following hold.
 - **Independent reimplementation.** The leaf bound is implemented a second time
   against a different hull routine (`src/independent.py`), and the two agree.
 - **Published constants, reproduced by code never tuned to them.** Pál's
-  `π/8 + √3/4` to 1.1e-16, and Brass and Sharifi's Figure 2 hull to 3.2e-6.
+  `pi/8 + sqrt3/4` to 1.1e-16, and Brass and Sharifi's Figure 2 hull to 3.2e-6.
 - **Controls in both directions.** `src/tamper.py` rebuilds corrupted
   certificates from the valid ones and checks each is refused, and checks that
   valid certificates and legitimate tightenings are still accepted. 22 of 22
@@ -171,13 +176,16 @@ Independently of that, the following hold.
   certificate declaring too small a domain, or an inflation that leaves gaps
   between sibling boxes, is refused.
 - **Structural identities.** For a forest of independent seed trees,
-  `nodes = 2·leaves − seeds`. This holds exactly on every verification run, so no
+  `nodes = 2*leaves - seeds`. This holds exactly on every verification run, so no
   subtree can be silently dropped.
 - **Second-routine cross-check.** 24,704 leaves recomputed with a hand written
   hull, worst disagreement 6.046e-13.
 - **High precision.** The leaf bound recomputed in 60 digit arithmetic
-  (`src/errbound.py`) agrees with double precision to 2.998e-15, against a
-  rigorous error bound of 9.287e-12 and a worst leaf slack of 1.240900e-05.
+  (`src/errbound.py`) agrees with double precision to 6.66e-15, against a
+  rigorous error bound of 1.72e-9 and a worst leaf slack of 1.240900e-05. The
+  error bound is structural, not sampled: the witness set holds at most
+  `m + 2K = 3072` points and every coordinate is at most `R = 0.70 + 1/sqrt(3)`,
+  so the shoelace magnitude is at most `N R^2`.
 - **Kernel gates.** 28 property tests on the geometry kernel (`src/test_geom.py`)
   and 29 audit checks per family (`src/audit.py`, `src/auditA.py`).
 
@@ -196,7 +204,6 @@ src/            geometry kernel, emitters, verifiers, audits, experiments
 certificates/   gzipped certificates, checksums, controls, regeneration steps
 logs/           every run referenced above
 docs/           literature review
-paper/          LaTeX source, figures, and the compiled paper
 ```
 
 On the proof path:
